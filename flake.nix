@@ -9,9 +9,10 @@
   outputs = {
     self,
     nixpkgs,
-    home-manager,
     ...
-  } @ inputs: let
+  } @ inputs: 
+
+  let
     inherit (self) outputs;
   in {
     # NixOS configuration entrypoint
