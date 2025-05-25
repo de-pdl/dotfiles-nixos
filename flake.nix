@@ -4,7 +4,6 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
-    # Home manager
   };
 
   outputs = {
@@ -21,8 +20,10 @@
       # FIXME replace with your hostname
       dev-env-pmx = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        # > Our main nixos configuration file <
-        modules = [./machines/configuration.nix];
+        modules = [
+		./machines/configuration.nix
+		./pkgs/gui/gui.nix
+		];
       };
     };
   };
