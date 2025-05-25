@@ -7,15 +7,25 @@
 
 	outputs = { self, nixpkgs, ... } @ inputs: 
 	let
-		root-save = /etc/nixos;
+		system = "x86_64-linux";
+		
+		pkgs = import nixpkgs {
+			inherit system;
+			
+			config = {
+				allowUnfree = true;
+			};
+		};
 	in
 	{
-		nixosConfigurations.nixos  = nixpkgs.lib.nixosSystem {
-			specialArgs = { inherit inputs; };
-			modules = [
-				.root-save/configuration.nix
-				.root-save/hardware-configuration.nix
-			];
+		nixosConfigurations = {
+			myNixos = nixpkgs.lib.nixosSystem {
+				specialArgs = { inherit system; };
+				modules = [
+					./etc/nixos/configuration.nix
+					./etc/nixos/hardware-configuration.nix
+				];
+			};
 		};
 	};
 
