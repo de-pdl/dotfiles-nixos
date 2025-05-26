@@ -27,7 +27,6 @@
             ./machines/dev-env-pmx/configuration.nix
             ./pkgs/cli               # <-- cli/default.nix
             ./pkgs/gui/env/hyprland
-            ./pkgs/gui/env/gui_environment2
           ];
         };
       };
