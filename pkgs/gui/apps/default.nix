@@ -5,5 +5,9 @@
   kate       = pkgs.kate;
   vlc        = pkgs.vlc;
   gimp       = pkgs.gimp;
+
+  foot       = pkgs.foot;
+  waybar     = pkgs.waybar;
+  wofi       = pkgs.wofi;
   # …and any overriden/custom apps
 }
