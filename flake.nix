@@ -13,7 +13,7 @@
         inherit system;
         overlays = [
           (final: prev: {
-            guiApps = import ./pkgs/gui/gui_usr_apps/default.nix { pkgs = prev; };
+            guiApps = import ./pkgs/gui/apps/default.nix { pkgs = prev; };
           })
         ];
       };

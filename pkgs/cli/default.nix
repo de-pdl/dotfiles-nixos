@@ -1,4 +1,4 @@
-{ config, pkgs, lib, … }:
+{ config, pkgs, lib, ... }:
 
 {
   # example: put your dotfiles & CLI tools into systemPackages
