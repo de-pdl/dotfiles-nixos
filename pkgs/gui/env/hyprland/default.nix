@@ -1,10 +1,14 @@
 { config, pkgs, lib, ... }:
 
 {
-  # hyprland example:
-  imports = [ ./hyprland.nix ];
+  programs.hyprland.enable = true;
 
-  # any extra config:
-  services.xserver.enable = true;
+  # read your hyprland.conf verbatim
+  programs.hyprland.extraConfig = builtins.readFile ./hyprland.conf;
+
+  environment.systemPackages = with pkgs; [
+    foot
+    waybar
+    wofi
+  ];
 }
-
