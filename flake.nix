@@ -6,12 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    ...
-  } @ inputs: 
-
+  outputs = { self, nixpkgs,...} @ inputs: 
   let
     inherit (self) outputs;
   in {
@@ -22,7 +17,7 @@
       dev-env-pmx = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-		./machines/configuration.nix
+		./machines/dev-env-pmx/configuration.nix
 		./pkgs/gui/gui.nix
 		];
       };
