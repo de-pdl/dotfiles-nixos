@@ -13,6 +13,8 @@
 
  
   services.mako.enable = true; 
+  programs.waybar.enable = true;  
+
   # Optional: common user tools
   programs.zsh.enable = true;
   home.packages = with pkgs; [
@@ -25,7 +27,7 @@
     
     waybar
     hyprpaper
-    nm-applet
+    networkmanagerapplet
     firefox
 
    
