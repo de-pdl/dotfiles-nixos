@@ -83,45 +83,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    avahi
-    avahi-compat
-    wget
-    firefox
-    remmina
-    python3
-    steam
-    git
-    discord
-    spotify
-    htop
-    firefox
-    vivaldi
-    vlc
-    obsidian
-    libreoffice
-    iverilog
-    gtkwave
-    uxplay 
-    localsend
-    #dconf-editor #gnome
-    calibre
-    foliate
-    neovim
-    bitwarden-desktop
-    nextcloud-client
-    python312Packages.zeroconf
-    qbittorrent-enhanced
-    bambu-studio
-    google-chrome
-    ocrmypdf
-    openvpn
-    obs-studio 
-    winetricks
-    wineWowPackages.waylandFull
-    wineWowPackages.stable
-    cifs-utils
-    pdfrip 
-    prismlauncher
+    #steam
 ];
   
   services.printing.enable = true;

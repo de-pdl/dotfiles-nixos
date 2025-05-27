@@ -6,14 +6,6 @@
 
   home.stateVersion = "24.05";  # Match your current NixOS version
 
-  # Set Hyprland config path environment variable
-  home.sessionVariables = {
-    HYPRLAND_CONFIG_DIR = ./.config/hypr;
-  };
-
-  home.file.".config/waybar/config".source = ./.config/waybar/config;
-  home.file.".config/waybar/style.css".source = ./.config/waybar/style.css;
- 
   services.mako.enable = true; 
   programs.waybar.enable = true;  
 
@@ -22,20 +14,71 @@
   
   programs.zsh.enable = true;
   home.packages = with pkgs; [
+    
+    #life-essentials 
     git
     neovim
+
+    #wayland pkg
     kitty
     kdePackages.dolphin
     wofi
     mako
-    
     waybar
     hyprpaper
     networkmanagerapplet
-    firefox
 
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    nerd-fonts.fira-code
+  
+
+    #network
+    avahi
+    avahi-compat
+    wget 
+
+    #remote
+    remmina
+    localsend
+    openvpn
+
+    #browser
+    firefox
+    google-chrome
+
+    #managers
+    bitwarden-desktop
+
+    #language
+    python3
+
+    #personal
+    discord
+    spotify
+    prismlauncher
+
+    #eng-suite
+    gtkwave
+    iverilog
+
+    #office-suite
+    libreoffice  
+    obsidian         
+    calibre
    
+    #resource-trackers
+    htop
+
+    #media
+    vlc #need to conf 
+    obs-studio
+
+
+   #vms/wines
+   winetricks
+   wineWowPackages.stable
+   wineWowPackages.waylandFull
+    
+
   ];
 }
 
