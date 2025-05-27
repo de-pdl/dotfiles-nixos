@@ -52,6 +52,8 @@
 
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
+  programs.hyprland.enable = true;
+
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ayush = {
