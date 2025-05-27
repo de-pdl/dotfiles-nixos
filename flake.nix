@@ -41,7 +41,6 @@
             }
           ];
         };
-      };
       nixosConfigurations.surface = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
@@ -54,8 +53,8 @@
 		home-manager.users.ayush = import ./home/ayush.nix;
             }
           ];
-        };
       };
-  
-} 
+	
+	};
+  	
 }
