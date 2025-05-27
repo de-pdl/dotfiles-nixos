@@ -52,12 +52,14 @@
 
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.gdm.wayland = true;
+
   programs.hyprland.enable = true;
 
 
   services.xrdp.enable = true;
   services.xrdp.openFirewall = true;
-  services.xrdp.defaultWindowManager = "wayland";
+  services.xrdp.defaultWindowManager = "startplasma-x11";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ayush = {
