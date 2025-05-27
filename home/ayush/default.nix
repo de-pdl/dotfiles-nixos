@@ -31,52 +31,52 @@
     nerd-fonts.fira-code
   
 
-    #network
-    avahi
-    avahi-compat
+    ##network
+    #avahi
+    #avahi-compat
     wget 
 
-    #remote
+    ##remote
     remmina
     localsend
     openvpn
 
-    #browser
+    ##browser
     firefox
     google-chrome
 
-    #managers
+    ##managers
     bitwarden-desktop
 
-    #language
+    ##language
     python3
 
-    #personal
+    ##personal
     discord
     spotify
     prismlauncher
 
-    #eng-suite
+    ##eng-suite
     gtkwave
     iverilog
 
-    #office-suite
+    ##office-suite
     libreoffice  
     obsidian         
     calibre
    
-    #resource-trackers
+    ##resource-trackers
     htop
 
-    #media
+    ##media
     vlc #need to conf 
     obs-studio
 
 
-   #vms/wines
-   winetricks
-   wineWowPackages.stable
-   wineWowPackages.waylandFull
+   ##vms/wines
+   #winetricks
+   #wineWowPackages.stable
+   #wineWowPackages.waylandFull
     
 
   ];
