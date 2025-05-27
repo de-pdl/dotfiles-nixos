@@ -9,7 +9,7 @@
   #programs.hyprland.enable = true;
 
   # Symlink Hyprland config from your repo to ~/.config/hypr/hyprland.conf
-  xdg.configFile."hypr/hyprland.conf".source = ./dotfiles/ayush/hypr/hyprland.conf;
+  xdg.configFile."hypr/hyprland.conf".source = ./ayush/hypr/hyprland.conf;
 
   # Set Hyprland config path environment variable
   home.sessionVariables = {
