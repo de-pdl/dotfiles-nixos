@@ -7,7 +7,6 @@
   ];
 
   # and maybe Home Manager:
-  programs.bash.enable = true;
   programs.zsh.enable  = true;
   # …etc
 }
