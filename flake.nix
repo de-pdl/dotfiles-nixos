@@ -10,6 +10,8 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     
+    #hardware-config
+    inputs.nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
   };
 
@@ -46,6 +48,7 @@
           modules = [
 		./machines/surface/configuration.nix
 	    	./machines/surface/hardware-configuration.nix
+		nixos-hardware.nixosModules.microsoft-surface-laptop-amd;
 		home-manager.nixosModules.home-manager 
 	    {
 	    	home-manager.useUserPackages = true;
