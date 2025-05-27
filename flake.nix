@@ -21,9 +21,9 @@
 			config.allowUnfree = true;
 		};
 	in {
-		homeConfigurations.test = home-manager.lib.homeManagerConfiguration {
+		homeConfigurations.ayush = home-manager.lib.homeManagerConfiguration {
 			inherit pkgs;
-			modules  = [ ./home/test.nix];
+			modules  = [ ./home/ayush.nix];
 		};
 	}) // 
 
@@ -37,7 +37,7 @@
 	    {
 	    	home-manager.useUserPackages = true;
 		home-manager.useGlobalPkgs = true;
-		home-manager.users.test = import ./home/test.nix;
+		home-manager.users.ayush = import ./home/ayush.nix;
             }
           ];
         };

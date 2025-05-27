@@ -1,68 +1,102 @@
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
+
 { config, pkgs, ... }:
 
 {
-  imports = [
-    ./hardware-configuration.nix
-  ];
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+    ];
 
-  # Hostname for this machine
-  networking.hostName = "test";
+  # Bootloader.
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.useOSProber = true;
 
-  # Bootloader (GRUB on EFI, edit if needed)
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  networking.hostName = "nixos"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Time and locale
-  time.timeZone = "Australia/Sydney"; # Change to your time zone
-  i18n.defaultLocale = "en_US.UTF-8";
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Networking
+  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Enable required services
+  # Set your time zone.
+  time.timeZone = "Australia/Sydney";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_AU.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_AU.UTF-8";
+    LC_IDENTIFICATION = "en_AU.UTF-8";
+    LC_MEASUREMENT = "en_AU.UTF-8";
+    LC_MONETARY = "en_AU.UTF-8";
+    LC_NAME = "en_AU.UTF-8";
+    LC_NUMERIC = "en_AU.UTF-8";
+    LC_PAPER = "en_AU.UTF-8";
+    LC_TELEPHONE = "en_AU.UTF-8";
+    LC_TIME = "en_AU.UTF-8";
+  };
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "au";
+    variant = "";
+  };
+
+
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = false; # Disable if using Hyprland only
+  services.xserver.displayManager.gnome.enable = false;
 
-  # Enable Wayland support
-  environment.variables = {
-    NIXOS_OZONE_WL = "1";
-  };
-
-
-  # User definition
-  users.users.test = {
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.ayush = {
     isNormalUser = true;
-    home = "/home/test";
-    shell = pkgs.zsh;
-    extraGroups = [ "wheel" "networkmanager" "video" ];
+    description = "Ayush";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [];
   };
 
-  # Allow non-free packages (e.g. for drivers or fonts)
+  # Enable automatic login for the user.
+  services.getty.autologinUser = "ayush";
+
+  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Nix settings (flakes and gc)
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nix.gc.automatic = true;
-  nix.gc.dates = "weekly";
-
-  # Enable Hyprland system-wide
-  programs.hyprland.enable = true;
-
-  # Shell
-  programs.zsh.enable = true;
-
-  # Home Manager setup (linked via flake.nix)
-  # See flake.nix for `home-manager.users.test = import ./home/test.nix`
-
-  # Default packages for all users
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
   environment.systemPackages = with pkgs; [
-    git
-    neovim
-    kitty
-    wget
-    curl
+  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+     vim
+     git  #  wget
+
   ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # Some programs need SUID wrappers, can be configured further or are
+
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
+
+  # List services that you want to enable:
+
+  # Enable the OpenSSH daemon.
+  services.openssh.enable = true;
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
