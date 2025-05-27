@@ -11,11 +11,15 @@
     HYPRLAND_CONFIG_DIR = ./.config/hypr;
   };
 
+  home.file.".config/waybar/config".source = ./.config/waybar/config;
+  home.file.".config/waybar/style.css".source = ./.config/waybar/style.css;
  
   services.mako.enable = true; 
   programs.waybar.enable = true;  
 
-  # Optional: common user tools
+
+  
+  
   programs.zsh.enable = true;
   home.packages = with pkgs; [
     git
@@ -30,6 +34,7 @@
     networkmanagerapplet
     firefox
 
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
    
   ];
 }
