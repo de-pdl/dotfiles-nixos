@@ -55,6 +55,10 @@
   programs.hyprland.enable = true;
 
 
+  services.xrdp.enable = true;
+  services.xrdp.openFirewall = true;
+
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ayush = {
     isNormalUser = true;
@@ -66,6 +70,9 @@
   # Enable automatic login for the user.
   services.getty.autologinUser = "ayush";
 
+  
+
+ 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

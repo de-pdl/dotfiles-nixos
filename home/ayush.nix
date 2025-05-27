@@ -16,6 +16,7 @@
     HYPRLAND_CONFIG_DIR = "${config.xdg.configHome}/hypr";
   };
 
+
   # Optional: common user tools
   programs.zsh.enable = true;
   home.packages = with pkgs; [
