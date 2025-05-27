@@ -8,11 +8,10 @@
 
   # Set Hyprland config path environment variable
   home.sessionVariables = {
-    HYPRLAND_CONFIG_DIR = "${config.xdg.configHome}/hypr";
+    HYPRLAND_CONFIG_DIR = ./.config/hypr;
   };
 
-  NIXOS_OZONE_WL = 1;
-
+  
   # Optional: common user tools
   programs.zsh.enable = true;
   home.packages = with pkgs; [
