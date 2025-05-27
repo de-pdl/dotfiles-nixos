@@ -29,15 +29,6 @@
     NIXOS_OZONE_WL = "1";
   };
 
-  # Enable sound
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-  };
 
   # User definition
   users.users.test = {
