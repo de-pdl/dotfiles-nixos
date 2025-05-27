@@ -11,7 +11,8 @@
     HYPRLAND_CONFIG_DIR = ./.config/hypr;
   };
 
-  
+ 
+  home.services.mako.enable = true; 
   # Optional: common user tools
   programs.zsh.enable = true;
   home.packages = with pkgs; [
@@ -22,7 +23,6 @@
     wofi
     mako
     
-
   ];
 }
 
