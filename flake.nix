@@ -14,7 +14,7 @@
   };
 
   outputs = { self, nixpkgs, home-manager, flake-utils, ... }:
-    flake.utils.lib.eachDefaultSystem (system: 
+    flake-utils.lib.eachDefaultSystem (system: 
     	let
       		pkgs   = import nixpkgs {
 			inherit system;
@@ -24,7 +24,8 @@
 		homeConfigurations.test = home-manager.lib.homeManagerConfiguration {
 			inherit pkgs;
 			modules  = [ ./home/test.nix];
-	}}) // 
+		};
+	}) // 
 
      {
      nixosConfigurations.dev-env-pmx = nixpkgs.lib.nixosSystem {

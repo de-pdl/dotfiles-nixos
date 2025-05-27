@@ -6,7 +6,7 @@
 
   home.stateVersion = "24.05";  # Match your current NixOS version
 
-  programs.hyprland.enable = true;
+  #programs.hyprland.enable = true;
 
   # Symlink Hyprland config from your repo to ~/.config/hypr/hyprland.conf
   xdg.configFile."hypr/hyprland.conf".source = ./dotfiles/test/hypr/hyprland.conf;
