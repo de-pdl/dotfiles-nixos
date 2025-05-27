@@ -25,7 +25,7 @@
 	in {
 		homeConfigurations.ayush = home-manager.lib.homeManagerConfiguration {
 			inherit pkgs;
-			modules  = [ ./home/ayush.nix];
+			modules  = [ ./home/ayush];
 		};
 	}) // 
 
@@ -39,7 +39,7 @@
 	    {
 	    	home-manager.useUserPackages = true;
 		home-manager.useGlobalPkgs = true;
-		home-manager.users.ayush = import ./home/ayush.nix;
+		home-manager.users.ayush = import ./home/ayush;
             }
           ];
         };
@@ -53,8 +53,8 @@
 	    {
 	    	home-manager.useUserPackages = true;
 		home-manager.useGlobalPkgs = true;
-		home-manager.users.ayush = import ./home/ayush.nix;
-            }
+		home-manager.users.ayush = import ./home/ayush;
+	    }
           ];
       };
 	
