@@ -16,6 +16,7 @@
     HYPRLAND_CONFIG_DIR = "${config.xdg.configHome}/hypr";
   };
 
+  NIXOS_OZONE_WL = 1;
 
   # Optional: common user tools
   programs.zsh.enable = true;
