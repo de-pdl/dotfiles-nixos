@@ -57,7 +57,7 @@
 
   services.xrdp.enable = true;
   services.xrdp.openFirewall = true;
-
+  services.xrdp.defaultWindowManager = "wayland";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ayush = {
