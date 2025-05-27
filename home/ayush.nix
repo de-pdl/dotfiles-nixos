@@ -25,6 +25,8 @@
     kitty
     kdePackages.dolphin
     wofi
+    
+
   ];
 }
 

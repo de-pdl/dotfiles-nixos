@@ -42,4 +42,20 @@
           ];
         };
       };
+      nixosConfigurations.surface = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+		./machines/surface/configuration.nix
+	    	./machines/surface/hardware-configuration.nix
+		home-manager.nixosModules.home-manager 
+	    {
+	    	home-manager.useUserPackages = true;
+		home-manager.useGlobalPkgs = true;
+		home-manager.users.ayush = import ./home/ayush.nix;
+            }
+          ];
+        };
+      };
+  
+} 
 }

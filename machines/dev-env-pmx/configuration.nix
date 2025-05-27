@@ -49,17 +49,21 @@
     variant = "";
   };
 
-
   services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.gdm.wayland = true;
 
-  programs.hyprland.enable = true;
+  # Local desktop
+  programs.hyprland.enable = true; 
 
-
+  # Remote desktop
   services.xrdp.enable = true;
-  services.xrdp.openFirewall = true;
-  services.xrdp.defaultWindowManager = "startplasma-x11";
+  services.xrdp.defaultWindowManager = "startxfce4";
+
+  # Display manager (login screen)
+  services.xserver.displayManager.lightdm.enable = true;
+
+  # Firewall
+  networking.firewall.allowedTCPPorts = [ 3389 ];
+
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ayush = {
