@@ -20,6 +20,7 @@
     kitty
     kdePackages.dolphin
     wofi
+    mako
     
 
   ];
