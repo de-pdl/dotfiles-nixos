@@ -52,7 +52,6 @@
 
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.gnome.enable = false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ayush = {
