@@ -22,6 +22,8 @@
     git
     neovim
     kitty
+    kdePackages.dolphin
+    wofi
   ];
 }
 
