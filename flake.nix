@@ -15,7 +15,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, flake-utils, ... }:
+  outputs = { self, nixpkgs, home-manager, flake-utils, nixos-hardware, ... }:
     flake-utils.lib.eachDefaultSystem (system: 
     	let
       		pkgs   = import nixpkgs {
