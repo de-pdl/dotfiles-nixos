@@ -66,6 +66,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  programs.hyprland.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ayush = {
@@ -100,7 +101,6 @@
     libreoffice
     iverilog
     gtkwave
-    kcalc
     uxplay 
     localsend
     #dconf-editor #gnome
