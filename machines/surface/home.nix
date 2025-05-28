@@ -1,91 +1,93 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "ayush";
-  home.homeDirectory = "/home/ayush";
 
-  home.stateVersion = "24.05";  # Match your current NixOS version
-
-  services.mako.enable = true; 
-  programs.waybar.enable = true;  
+  imports = [
   
-  #services.gvfs.enable = true; 
-  #dbus shit
+  ./variables.nix
+  ]
 
+  home = {
+
+	inherit (config.var) username;
+	homeDirectory = "/home/" + config.var.username; 
  
-  home.packages = with pkgs; [
+	packages = with pkgs; [
     
-    #life-essentials 
-    git
-    neovim
+    	#life-essentials 
+    	git
+    	neovim
 
-    #wayland pkg
+    	#wayland pkg
 
-    #terminal
-    kitty 
+    	#terminal
+    	kitty 
 
-    #file manager - in machine configuration
-    xfce.thunar
-    #screenshot tool
-    grimblast
+    	#file manager - in machine configuration
+    	xfce.thunar
+    	#screenshot tool
+	grimblast
  
-    wofi
-    mako
-    waybar
-    hyprpaper
-    networkmanagerapplet
+   	wofi
+    	mako
+    	waybar
+    	hyprpaper
+    	networkmanagerapplet
 
-    nerd-fonts.fira-code
+    	nerd-fonts.fira-code
   
 
-    ##network
-    #avahi
-    #avahi-compat
-    wget 
+    	##network
+    	#avahi
+    	#avahi-compat
+    	wget 
 
-    ##remote
-    remmina
-    localsend
-    openvpn
+    	##remote
+    	remmina
+    	localsend
+    	openvpn
 
-    ##browser
-    firefox
-    google-chrome
+    	##browser
+    	firefox
+    	google-chrome
 
-    ##managers
-    bitwarden-desktop
+    	##managers
+    	bitwarden-desktop
 
-    ##language
-    python3
+    	##language
+    	python3
 
-    ##personal
-    discord
-    spotify
-    prismlauncher
+    	##personal
+   	discord
+    	spotify
+    	prismlauncher
 
-    ##eng-suite
-    gtkwave
-    iverilog
+    	##eng-suite
+    	gtkwave
+    	iverilog
 
-    ##office-suite
-    libreoffice  
-    obsidian         
-    calibre
+    	##office-suite
+    	libreoffice  
+    	obsidian         
+    	calibre
    
-    ##resource-trackers
-    htop
+    	##resource-trackers
+    	htop
 
-    ##media
-    vlc #need to conf 
-    obs-studio
+    	##media
+    	vlc #need to conf 
+    	obs-studio
 
 
-   ##vms/wines
-   #winetricks
-   #wineWowPackages.stable
-   #wineWowPackages.waylandFull
-    
-
+   	##vms/wines
+   	#winetricks
+   	#wineWowPackages.stable
+   	#wineWowPackages.waylandFull
   ];
+
+  stateVersion = "24.05";
+  };
+  
+  programs.home-manager.enable = true;
 }
 

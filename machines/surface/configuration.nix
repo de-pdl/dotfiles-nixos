@@ -13,7 +13,10 @@
     ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
+  nixpkgs.config.allowUnfree = true;
+  
   home-manager.users."${config.var.username}" = import ./home.nix;
+
 
   swapDevices =
     [ { device = "/dev/disk/by-label/swap"; }
@@ -78,7 +81,6 @@
   };
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
