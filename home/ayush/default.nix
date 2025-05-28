@@ -10,6 +10,8 @@
   programs.waybar.enable = true;  
  
 
+  services.gvfs.enable = true;  
+
   home.packages = with pkgs; [
     
     #life-essentials 
@@ -26,6 +28,7 @@
     xfce.thunar-archive-plugin
     xfce.thunar-volman
     gvfs
+    gvfs-smb
     xfce.tumbler
 
     #screenshot tool
