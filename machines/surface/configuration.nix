@@ -7,7 +7,9 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+        ./hardware-configuration.nix
+	./variables.nix
+
     ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
@@ -43,11 +45,6 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   #environment.sessionVariables.ELECTRON_OZONE_PLATFORM_HINT =auto;
 
-  # Set your time zone.
-  time.timeZone = "Australia/Sydney";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_AU.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_AU.UTF-8";

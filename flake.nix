@@ -49,8 +49,8 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, flake-utils, nixos-hardware, ... }:
-     {
+  outputs = inputs @ { nixpkgs, ... }:
+  {
      nixosConfigurations = {
 
      dev-env-pmx = 
@@ -59,12 +59,7 @@
           modules = [
 		./machines/dev-env-pmx/configuration.nix
 	    	./machines/dev-env-pmx/hardware-configuration.nix
-		home-manager.nixosModules.home-manager 
-	    {
-	    	home-manager.useUserPackages = true;
-		home-manager.useGlobalPkgs = true;
-		home-manager.users.ayush = import ./home/ayush;
-            }
+		inputs.home-manager.nixosModules.home-manager 
           ];
       };
       
@@ -85,4 +80,6 @@
 	
       };
   	
+   };
+
 }
