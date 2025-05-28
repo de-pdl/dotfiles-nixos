@@ -30,7 +30,6 @@
   };
   networking.hostName = "ayush-nix"; # Define your hostname.
   networking.wireless.enable = false;  # Enables wireless support via wpa_supplicant.
-
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -38,6 +37,9 @@
   # Enable networking
   networking.networkmanager.enable = true;
   networking.useDHCP = false;
+
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  #environment.sessionVariables.ELECTRON_OZONE_PLATFORM_HINT =auto;
 
   # Set your time zone.
   time.timeZone = "Australia/Sydney";

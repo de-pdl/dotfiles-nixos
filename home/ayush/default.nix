@@ -25,7 +25,7 @@
     kitty 
 
     #file manager - in machine configuration
-
+    xfce.thunar
     #screenshot tool
     grimblast
  

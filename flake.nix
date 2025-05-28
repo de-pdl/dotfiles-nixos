@@ -48,6 +48,7 @@
           modules = [
 		./machines/surface/configuration.nix
 	    	./machines/surface/hardware-configuration.nix
+		./home/ayush/nixconfig.nix
 		nixos-hardware.nixosModules.microsoft-surface-laptop-amd
 		home-manager.nixosModules.home-manager 
 	    {
