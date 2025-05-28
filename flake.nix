@@ -50,21 +50,11 @@
   };
 
   outputs = { self, nixpkgs, home-manager, flake-utils, nixos-hardware, ... }:
-    flake-utils.lib.eachDefaultSystem (system: 
-    	let
-      		pkgs   = import nixpkgs {
-			inherit system;
-			config.allowUnfree = true;
-		};
-	in {
-		homeConfigurations.ayush = home-manager.lib.homeManagerConfiguration {
-			inherit pkgs;
-			modules  = [ ./home/ayush];
-		};
-	}) // 
-
      {
-     nixosConfigurations.dev-env-pmx = nixpkgs.lib.nixosSystem {
+     nixosConfigurations = {
+
+     dev-env-pmx = 
+     nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
 		./machines/dev-env-pmx/configuration.nix
@@ -76,23 +66,23 @@
 		home-manager.users.ayush = import ./home/ayush;
             }
           ];
-        };
-      nixosConfigurations.surface = nixpkgs.lib.nixosSystem {
+      };
+      
+      surface = 
+      nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [
+	  	{
+			nixpkgs.overlays = [ inputs.hyprpanel.overlay ];
+			_module.args = { inherit inputs; };
+		}
 		./machines/surface/configuration.nix
-	    	./machines/surface/hardware-configuration.nix
-		./home/ayush/nixconfig.nix
-		nixos-hardware.nixosModules.microsoft-surface-laptop-amd
-		home-manager.nixosModules.home-manager 
-	    {
-	    	home-manager.useUserPackages = true;
-		home-manager.useGlobalPkgs = true;
-		home-manager.users.ayush = import ./home/ayush;
-	    }
+		inputs.nixos-hardware.nixosModules.microsoft-surface-laptop-amd
+		inputs.home-manager.nixosModules.home-manager
+		inputs.stylix.nixosModules.stylix
           ];
       };
 	
-	};
+      };
   	
 }

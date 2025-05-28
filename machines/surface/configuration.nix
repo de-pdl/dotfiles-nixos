@@ -10,7 +10,9 @@
       ./hardware-configuration.nix
     ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
- 
+  
+  home-manager.users."${config.var.username}" = import ./home.nix;
+
   swapDevices =
     [ { device = "/dev/disk/by-label/swap"; }
     ];
