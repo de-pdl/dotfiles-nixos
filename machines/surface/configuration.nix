@@ -7,10 +7,17 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+        ./hardware-configuration.nix
+	./variables.nix
+
     ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
- 
+  
+  nixpkgs.config.allowUnfree = true;
+  
+  home-manager.users."${config.var.username}" = import ./home.nix;
+
+
   swapDevices =
     [ { device = "/dev/disk/by-label/swap"; }
     ];
@@ -41,11 +48,6 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   #environment.sessionVariables.ELECTRON_OZONE_PLATFORM_HINT =auto;
 
-  # Set your time zone.
-  time.timeZone = "Australia/Sydney";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_AU.UTF-8";
 
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_AU.UTF-8";
@@ -79,7 +81,6 @@
   };
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -91,6 +92,13 @@
     xfce.tumbler # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #steam
 ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    backupFileExtension = "hm-backup";
+  };
+
   programs.thunar.enable = true;
   programs.xfconf.enable = true;
 
