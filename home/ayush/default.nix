@@ -9,14 +9,6 @@
   services.mako.enable = true; 
   programs.waybar.enable = true;  
  
-  # Symlink your script into ~/.config/zsh/
-  home.file.".config/zsh/my-zsh-setup.sh".source = ././.config/zsh/my-zsh-setup.sh;
-  programs.zsh = {
-  	enable = true;
-	initExtra = ''
-      		source ~/.config/zsh/my-zsh-setup.sh
-        '';
-  }
 
   home.packages = with pkgs; [
     
