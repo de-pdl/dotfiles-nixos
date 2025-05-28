@@ -92,6 +92,13 @@
     xfce.tumbler # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #steam
 ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    backupFileExtension = "hm-backup";
+  };
+
   programs.thunar.enable = true;
   programs.xfconf.enable = true;
 

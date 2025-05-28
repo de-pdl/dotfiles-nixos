@@ -5,7 +5,7 @@
   imports = [
   
   ./variables.nix
-  ]
+  ];
 
   home = {
 
@@ -58,7 +58,7 @@
     	python3
 
     	##personal
-   	discord
+    	discord
     	spotify
     	prismlauncher
 
@@ -85,7 +85,7 @@
    	#wineWowPackages.waylandFull
   ];
 
-  stateVersion = "24.05";
+  stateVersion = "25.05";
   };
   
   programs.home-manager.enable = true;

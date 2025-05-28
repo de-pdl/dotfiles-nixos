@@ -25,7 +25,7 @@
     search-nixos-api.url = "github:anotherhadi/search-nixos-api";		# nix api
     
     home-manager = {                               				#home-manager {usr pkg}
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
    
