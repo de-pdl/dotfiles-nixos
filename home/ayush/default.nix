@@ -8,11 +8,16 @@
 
   services.mako.enable = true; 
   programs.waybar.enable = true;  
+ 
+  # Symlink your script into ~/.config/zsh/
+  home.file.".config/zsh/my-zsh-setup.sh".source = ././.config/zsh/my-zsh-setup.sh;
+  programs.zsh = {
+  	enable = true;
+	initExtra = ''
+      		source ~/.config/zsh/my-zsh-setup.sh
+        '';
+  }
 
-
-  
-  
-  programs.zsh.enable = true;
   home.packages = with pkgs; [
     
     #life-essentials 
@@ -20,8 +25,20 @@
     neovim
 
     #wayland pkg
-    kitty
-    kdePackages.dolphin
+
+    #terminal
+    kitty 
+
+    #file manager
+    xfce.thunar
+    xfce.thunar-archive-plugin
+    xfce.thunar-volman
+    gvfs
+    xfce.tumbler
+
+    #screenshot tool
+    grimblast
+ 
     wofi
     mako
     waybar
