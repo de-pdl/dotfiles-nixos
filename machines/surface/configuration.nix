@@ -84,23 +84,27 @@
   environment.systemPackages = with pkgs; [
     vim
     git
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    neovim
+    xfce.thunar
+    xfce.tumbler # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #steam
 ];
-  
+  programs.thunar.enable = true;
+  programs.xfconf.enable = true;
+
   services.printing.enable = true;
   
   services.tailscale.enable = true;
   services.tailscale.useRoutingFeatures = "client";
   
-
+  services.gvfs.enable = true;
+  services.tumbler.enable = true; # Optional for thumbnails
+  programs.thunar.plugins = with pkgs.xfce; [
+  	thunar-archive-plugin
+  	thunar-volman
+  ];
   services.logind.extraConfig = "HandleLidSwitch=ignore";
-  #gnome
-  programs.evolution = {
-	enable = true;
-	plugins = [ pkgs.evolution-ews ];
-  };
-
+  
   services.dbus.packages = [
   	pkgs.dbus.out
   	config.system.path

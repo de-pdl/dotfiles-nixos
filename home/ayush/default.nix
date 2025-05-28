@@ -8,10 +8,11 @@
 
   services.mako.enable = true; 
   programs.waybar.enable = true;  
+  
+  #services.gvfs.enable = true; 
+  #dbus shit
+
  
-
-  services.gvfs.enable = true;  
-
   home.packages = with pkgs; [
     
     #life-essentials 
@@ -23,13 +24,7 @@
     #terminal
     kitty 
 
-    #file manager
-    xfce.thunar
-    xfce.thunar-archive-plugin
-    xfce.thunar-volman
-    gvfs
-    gvfs-smb
-    xfce.tumbler
+    #file manager - in machine configuration
 
     #screenshot tool
     grimblast
