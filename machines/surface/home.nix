@@ -4,7 +4,11 @@
 
   imports = [
   
-  ./variables.nix
+  ./variables.nix #user 
+
+  ../../home/programs/nvim #text editor
+
+
   ];
 
   home = {
@@ -16,7 +20,6 @@
     
     	#life-essentials 
     	git
-    	neovim
 
     	#wayland pkg
 

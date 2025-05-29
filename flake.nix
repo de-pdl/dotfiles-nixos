@@ -22,7 +22,6 @@
 
     # essentials
     sops-nix.url = "github:Mic92/sops-nix"; 					# secrets
-    search-nixos-api.url = "github:anotherhadi/search-nixos-api";		# nix api
     
     home-manager = {                               				#home-manager {usr pkg}
       url = "github:nix-community/home-manager/release-25.05";
