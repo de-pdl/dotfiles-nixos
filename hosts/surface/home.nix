@@ -10,7 +10,7 @@
     ../../home/programs/shell
     ../../home/programs/fetch
     ../../home/programs/git
-    ../../home/programs/git/signing.nix
+    #../../home/programs/git/signing.nix
     ../../home/programs/spicetify
     ../../home/programs/nextcloud
     ../../home/programs/thunar
@@ -36,7 +36,7 @@
     ../../home/system/udiskie
     ../../home/system/clipman
 
-    ./secrets # CHANGEME: You should probably remove this line, this is where I store my secrets
+    #./secrets # CHANGEMET: You should probably remove this line, this is where I store my secrets
   ];
 
   home = {
