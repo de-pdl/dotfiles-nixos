@@ -7,14 +7,11 @@
       };
       SnacksPickerBorder = {
         bg = "none";
-        fg = "#${config.lib.stylix.colors.base0D}";
       };
-      SnacksPickerTree = { bg = "#${config.lib.stylix.colors.base00}"; };
+      SnacksPickerTree = {  };
       FloatBorder = {
-        bg = "#${config.lib.stylix.colors.base00}";
-        fg = "#${config.lib.stylix.colors.base0D}";
       };
-      NormalFloat = { bg = "#${config.lib.stylix.colors.base00}"; };
+      NormalFloat = { };
     };
     plugins = {
       snacks.settings = {

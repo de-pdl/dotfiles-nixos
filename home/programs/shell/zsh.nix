@@ -1,7 +1,6 @@
 # My shell configuration
 { pkgs, lib, config, ... }:
-let fetch = config.theme.fetch; # neofetch, nerdfetch, pfetch
-in {
+{
 
   home.packages = with pkgs; [ bat ripgrep tldr sesh rmtrash trash-cli ];
 
@@ -94,15 +93,7 @@ in {
     initContent = # bash
       ''
         bindkey -e
-        ${if fetch == "neofetch" then
-          pkgs.neofetch + "/bin/neofetch"
-        else if fetch == "nerdfetch" then
-          "nerdfetch"
-        else if fetch == "pfetch" then
-          "echo; ${pkgs.pfetch}/bin/pfetch"
-        else
-          ""}
-
+        
         function sesh-sessions() {
           session=$(sesh list -t -c | fzf --height 70% --reverse)
           [[ -z "$session" ]] && return

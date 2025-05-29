@@ -9,32 +9,19 @@
     ../../home/programs/nvim
     ../../home/programs/shell
     ../../home/programs/fetch
-    ../../home/programs/git
-    #../../home/programs/git/signing.nix
-    ../../home/programs/spicetify
-    ../../home/programs/nextcloud
-    ../../home/programs/thunar
-    ../../home/programs/lazygit
     ../../home/programs/zen
-    ../../home/programs/duckduckgo-colorscheme
-    ../../home/programs/discord
     ../../home/programs/tailscale
-    ../../home/programs/anyrun
 
     # Scripts
     ../../home/scripts # All scripts
 
     # System (Desktop environment like stuff)
     ../../home/system/hyprland
-    ../../home/system/hypridle
-    ../../home/system/hyprlock
     ../../home/system/hyprpanel
-    ../../home/system/hyprpaper
     ../../home/system/wofi
     ../../home/system/zathura
     ../../home/system/mime
     ../../home/system/udiskie
-    ../../home/system/clipman
 
     #./secrets # CHANGEMET: You should probably remove this line, this is where I store my secrets
   ];
@@ -57,7 +44,6 @@
       gnome-clocks
       gnome-text-editor
       mpv # Video player
-      figma-linux
 
       # Dev
       go
@@ -67,6 +53,8 @@
       just
       pnpm
       air
+
+      gpt4all  
 
       # Utils
       zip
@@ -78,13 +66,11 @@
       fastfetch
 
       # Just cool
-      peaclock
-      cbonsai
-      pipes
-      cmatrix
+      #c clock
+      peaclock 
 
       # Backup
-      brave
+      google-chrome
       vscode
     ];
 

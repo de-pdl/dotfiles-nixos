@@ -1,8 +1,4 @@
-{ config, ... }:
-let
-  accent = "#${config.lib.stylix.colors.base0D}";
-  muted = "#${config.lib.stylix.colors.base03}";
-in {
+{ config, ... }: {
   programs.nixvim = {
     extraFiles."after/ftplugin/markdown.lua".text = ''
       vim.bo.tabstop = 2

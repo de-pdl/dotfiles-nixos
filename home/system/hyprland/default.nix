@@ -1,15 +1,7 @@
 # So best window tiling manager
 { pkgs, config, inputs, lib, ... }:
 let
-  border-size = config.theme.border-size;
-  gaps-in = config.theme.gaps-in;
-  gaps-out = config.theme.gaps-out;
-  active-opacity = config.theme.active-opacity;
-  inactive-opacity = config.theme.inactive-opacity;
-  rounding = config.theme.rounding;
-  blur = config.theme.blur;
   keyboardLayout = config.var.keyboardLayout;
-  background = "rgb(" + config.lib.stylix.colors.base00 + ")";
 in {
 
   imports = [
@@ -17,7 +9,6 @@ in {
     ./bindings.nix
     ./polkitagent.nix
 #    ./keyboard-backlight.nix # CHANGEME: This is for my laptop only
-    ./hyprspace.nix
   ];
 
   home.packages = with pkgs; [
@@ -67,9 +58,7 @@ in {
       ];
 
       monitor = [
-        "eDP-2,highres,0x0,1" # My internal laptop screen
-        "desc:AOC U34G2G1 0x00000E06,3440x1440@99.98,auto,1" # My external monitor
-        "desc:United Microelectr Corporation UMC SHARP,3840x2160,auto,2" # TV
+        "eDP-1,highres,0x0,1" # My internal laptop screen
         ",prefered,auto,1" # default
       ];
 
@@ -95,35 +84,23 @@ in {
         "WLR_NO_HARDWARE_CURSORS,1"
         "SDL_VIDEODRIVER,wayland"
         "CLUTTER_BACKEND,wayland"
-        "AQ_DRM_DEVICES,/dev/dri/card2:/dev/dri/card1" # CHANGEME: Related to the GPU
       ];
 
       cursor = {
         no_hardware_cursors = true;
-        default_monitor = "eDP-2";
+        default_monitor = "eDP-1";
       };
 
       general = {
         resize_on_border = true;
-        gaps_in = gaps-in;
-        gaps_out = gaps-out;
-        border_size = border-size;
         layout = "master";
-        "col.inactive_border" = lib.mkForce background;
       };
 
       decoration = {
-        active_opacity = active-opacity;
-        inactive_opacity = inactive-opacity;
-        rounding = rounding;
         shadow = {
           enabled = true;
           range = 20;
           render_power = 3;
-        };
-        blur = {
-          enabled = if blur then "true" else "false";
-          size = 18;
         };
       };
 

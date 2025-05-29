@@ -90,6 +90,7 @@ in {
     fd
     bc
     gcc
+    git 
     git-ignore
     xdg-utils
     wget
@@ -110,8 +111,6 @@ in {
 
   security = {
     # allow wayland lockers to unlock the screen
-    pam.services.hyprlock.text = "auth include login";
-
     # userland niceness
     rtkit.enable = true;
 
