@@ -6,7 +6,7 @@
   
   ./variables.nix #user 
 
-  ../../home/programs/nvim #text editor
+  #../../home/programs/nvim #text editor
 
 
   ];

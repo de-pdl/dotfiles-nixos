@@ -2,6 +2,7 @@
 { inputs, ... }: {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+    
     ./plugins/cmp.nix
     ./plugins/floaterm.nix
     ./plugins/git.nix

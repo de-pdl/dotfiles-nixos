@@ -10,6 +10,9 @@
         ./hardware-configuration.nix
 	./variables.nix
 
+
+      # niox modules
+         ../../nixos/home-manager.nix
     ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
@@ -85,19 +88,12 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim
     git
-    neovim
     xfce.thunar
     xfce.tumbler # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #steam
 ];
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    backupFileExtension = "hm-backup";
-  };
 
   programs.thunar.enable = true;
   programs.xfconf.enable = true;
