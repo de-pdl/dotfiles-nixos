@@ -83,7 +83,8 @@ Each host includes:
 - `variables.nix` for global variables
 - `secrets/` for sensitive data
 
-## Installation
+credit: (https://github.com/anotherhadi/nixy, this is a derivation based on anotherhadi, 
+## Installation ####to change and make a installation script for my servers
 
 1. [Fork](https://github.com/anotherhadi/nixy/fork) this repo and clone it to your system:
 
