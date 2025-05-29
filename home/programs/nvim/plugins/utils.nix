@@ -1,9 +1,9 @@
 { config, lib, pkgs, ... }: {
   programs.nixvim = {
     nixpkgs.config.allowUnfree = true; # For copilot
-    highlightOverride = {
-      WhichKeySeparator.bg = "#${config.lib.stylix.colors.base00}";
-    };
+#    highlightOverride = {
+#      WhichKeySeparator.bg = "#${config.lib.stylix.colors.base00}";
+#    };
     plugins = {
       bufferline.enable = true;
       copilot-vim = {

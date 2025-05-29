@@ -6,9 +6,17 @@
   
   ./variables.nix #user 
 
-  #../../home/programs/nvim #text editor
+  ../../home/programs/nvim #text editor
 
 
+
+  #system
+
+  ../../home/system/hyprland
+  #../../home/system/hypridle
+  #../../home/system/hyprlock
+  #../../home/system/hyprpanel
+  #../../home/system/hyprpaper
   ];
 
   home = {

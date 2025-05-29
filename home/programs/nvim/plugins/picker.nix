@@ -1,21 +1,21 @@
 { config, ... }: {
   programs.nixvim = {
-    highlightOverride = {
-      SnacksPicker = {
-        bg = "none";
-        nocombine = true;
-      };
-      SnacksPickerBorder = {
-        bg = "none";
-        fg = "#${config.lib.stylix.colors.base0D}";
-      };
-      SnacksPickerTree = { bg = "#${config.lib.stylix.colors.base00}"; };
-      FloatBorder = {
-        bg = "#${config.lib.stylix.colors.base00}";
-        fg = "#${config.lib.stylix.colors.base0D}";
-      };
-      NormalFloat = { bg = "#${config.lib.stylix.colors.base00}"; };
-    };
+#    highlightOverride = {
+#      SnacksPicker = {
+#        bg = "none";
+#        nocombine = true;
+#      };
+#      SnacksPickerBorder = {
+#        bg = "none";
+#        fg = "#${config.lib.stylix.colors.base0D}";
+#      };
+#      SnacksPickerTree = { bg = "#${config.lib.stylix.colors.base00}"; };
+#      FloatBorder = {
+#        bg = "#${config.lib.stylix.colors.base00}";
+#        fg = "#${config.lib.stylix.colors.base0D}";
+#      };
+#      NormalFloat = { bg = "#${config.lib.stylix.colors.base00}"; };
+#    };
     plugins = {
       snacks.settings = {
         picker.enable = true;

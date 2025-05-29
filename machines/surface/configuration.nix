@@ -13,6 +13,7 @@
 
       # niox modules
          ../../nixos/home-manager.nix
+         ../../nixos/hyprland.nix
     ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   
@@ -73,7 +74,6 @@
   services.xserver.enable = true;
   services.xserver.desktopManager.gnome.enable = false;
 
-  programs.hyprland.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ayush = {
@@ -89,6 +89,9 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     git
+    gcc
+    git-ignore
+    vim
     xfce.thunar
     xfce.tumbler # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #steam
