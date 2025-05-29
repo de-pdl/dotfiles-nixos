@@ -12,7 +12,7 @@
 
   #system
 
-  ../../home/system/hyprland
+    #../../home/system/hyprland
   #../../home/system/hypridle
   #../../home/system/hyprlock
   #../../home/system/hyprpanel
